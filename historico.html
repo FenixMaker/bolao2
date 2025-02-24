@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico - FLA BIBI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trophy-icon">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                        <path d="M4 22h16"></path>
+                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                    </svg>
+                    <span>FLA BIBI</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="/">Próximos Jogos</a>
+                    <a href="/historico.html" class="active">Histórico</a>
+                    <a href="/admin.html">Admin</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="page-title">Histórico de Jogos</h1>
+
+        <div class="history-filters">
+            <select id="monthFilter" class="filter-select">
+                <option value="">Todos os Meses</option>
+                <option value="3">Março 2024</option>
+                <option value="2">Fevereiro 2024</option>
+                <option value="1">Janeiro 2024</option>
+            </select>
+            <select id="competitionFilter" class="filter-select">
+                <option value="">Todas as Competições</option>
+                <option value="carioca">Campeonato Carioca</option>
+                <option value="brasileiro">Brasileirão</option>
+                <option value="libertadores">Libertadores</option>
+            </select>
+        </div>
+
+        <div class="history-list">
+            <div class="history-item">
+                <div class="history-date">10/03/2024</div>
+                <div class="history-game">
+                    <div class="history-teams">
+                        <div class="team">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png" alt="Flamengo" class="team-logo-small">
+                            <span>Flamengo</span>
+                        </div>
+                        <div class="history-score">3 x 0</div>
+                        <div class="team">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Vasco_da_Gama_logo.svg" alt="Vasco" class="team-logo-small">
+                            <span>Vasco</span>
+                        </div>
+                    </div>
+                    <div class="history-details">
+                        <span class="competition">Campeonato Carioca</span>
+                        <span class="winner">Vencedor: Maria (3x0)</span>
+                        <span class="prize">Prêmio: R$ 45,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <div class="history-date">03/03/2024</div>
+                <div class="history-game">
+                    <div class="history-teams">
+                        <div class="team">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png" alt="Flamengo" class="team-logo-small">
+                            <span>Flamengo</span>
+                        </div>
+                        <div class="history-score">2 x 1</div>
+                        <div class="team">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Botafogo_de_Futebol_e_Regatas_logo.svg" alt="Botafogo" class="team-logo-small">
+                            <span>Botafogo</span>
+                        </div>
+                    </div>
+                    <div class="history-details">
+                        <span class="competition">Campeonato Carioca</span>
+                        <span class="winner">Vencedor: João (2x1)</span>
+                        <span class="prize">Prêmio: R$ 36,00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="historico.js"></script>
+</body>
+</html>

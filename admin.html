@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - FLA BIBI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trophy-icon">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                        <path d="M4 22h16"></path>
+                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                    </svg>
+                    <span>FLA BIBI</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="/">Próximos Jogos</a>
+                    <a href="/historico.html">Histórico</a>
+                    <a href="/admin.html" class="active">Admin</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="page-title">Painel do Administrador</h1>
+
+        <div class="admin-grid">
+            <div class="admin-card">
+                <h2>Cadastrar Novo Jogo</h2>
+                <form id="newGameForm" class="admin-form">
+                    <div class="form-group">
+                        <label for="homeTeam">Time da Casa</label>
+                        <select id="homeTeam" required>
+                            <option value="Flamengo">Flamengo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="awayTeam">Time Visitante</label>
+                        <select id="awayTeam" required>
+                            <option value="Fluminense">Fluminense</option>
+                            <option value="Vasco">Vasco</option>
+                            <option value="Botafogo">Botafogo</option>
+                            <option value="Palmeiras">Palmeiras</option>
+                            <option value="São Paulo">São Paulo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gameDate">Data do Jogo</label>
+                        <input type="datetime-local" id="gameDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Local</label>
+                        <input type="text" id="location" required>
+                    </div>
+                    <button type="submit" class="admin-button">Cadastrar Jogo</button>
+                </form>
+            </div>
+
+            <div class="admin-card">
+                <h2>Cadastrar Palpite</h2>
+                <form id="newBetForm" class="admin-form">
+                    <div class="form-group">
+                        <label for="userName">Nome do Apostador</label>
+                        <input type="text" id="userName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="betGame">Jogo</label>
+                        <select id="betGame" required>
+                            <option value="1">Flamengo x Fluminense (17/03/2024)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="homeScore">Gols Casa</label>
+                            <input type="number" id="homeScore" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="awayScore">Gols Visitante</label>
+                            <input type="number" id="awayScore" min="0" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="admin-button">Cadastrar Palpite</button>
+                </form>
+            </div>
+
+            <div class="admin-card">
+                <h2>Atualizar Placar</h2>
+                <form id="updateScoreForm" class="admin-form">
+                    <div class="form-group">
+                        <label for="updateGame">Jogo</label>
+                        <select id="updateGame" required>
+                            <option value="1">Flamengo x Fluminense (17/03/2024)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="updateHomeScore">Gols Casa</label>
+                            <input type="number" id="updateHomeScore" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="updateAwayScore">Gols Visitante</label>
+                            <input type="number" id="updateAwayScore" min="0" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gameStatus">Status do Jogo</label>
+                        <select id="gameStatus" required>
+                            <option value="not_started">Não Iniciado</option>
+                            <option value="in_progress">Em Andamento</option>
+                            <option value="finished">Finalizado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gameMinute">Minuto de Jogo</label>
+                        <input type="number" id="gameMinute" min="0" max="90">
+                    </div>
+                    <button type="submit" class="admin-button">Atualizar Placar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
