@@ -1,0 +1,241 @@
+/* Historico Page Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-title {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Filters */
+.history-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    border: var(--card-border);
+}
+
+.filter-select {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: var(--card-border);
+    background: var(--input-background);
+    color: var(--text-color);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-select:hover {
+    border-color: var(--primary-color);
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(227, 20, 20, 0.1);
+}
+
+/* History List */
+.history-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.game-history-item {
+    background: var(--card-background);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    border: var(--card-border);
+    transition: all 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+}
+
+.game-history-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.game-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.game-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.game-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.game-score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.game-details {
+    display: flex;
+    gap: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.game-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.game-detail-item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--primary-color);
+}
+
+.bets-info {
+    background: var(--stats-background);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: var(--card-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-self: center;
+}
+
+.bets-info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.bets-info-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.bets-info-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.winner-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--success-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.details-button {
+    background: var(--card-background);
+    border: var(--card-border);
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.details-button:hover {
+    background: var(--hover-background);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pagination button {
+    background: var(--card-background);
+    border: var(--card-border);
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    min-width: 120px;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+    background: var(--hover-background);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.pagination span {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .history-filters {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .game-history-item {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .game-details {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .bets-info {
+        padding: 1rem;
+    }
+} 

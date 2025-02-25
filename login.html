@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FLA BIBI</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://logodetimes.com/times/flamengo/logo-flamengo-256.png" alt="Logo Flamengo">
+                <h1>FLA BIBI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="/">Início</a>
+                <a href="/historico.html">Histórico</a>
+                <a href="/admin.html">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <img src="https://logodetimes.com/times/flamengo/logo-flamengo-256.png" alt="Logo Flamengo" width="80">
+            </div>
+            <h2>Bem-vindo de volta!</h2>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required placeholder="Sua senha">
+                </div>
+                <button type="submit" class="submit-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                        <polyline points="10 17 15 12 10 7"></polyline>
+                        <line x1="15" y1="12" x2="3" y2="12"></line>
+                    </svg>
+                    Entrar
+                </button>
+            </form>
+            <div class="auth-links">
+                <p>Não tem uma conta? <a href="/register.html">Cadastre-se</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="src/auth/login.js"></script>
+</body>
+</html> 

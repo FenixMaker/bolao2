@@ -1,0 +1,100 @@
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #64748b;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+}
+
+.close-button:hover {
+    background-color: #f1f5f9;
+    color: var(--text-color);
+}
+
+/* Bet Form */
+.bet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bet-form .form-group {
+    margin-bottom: 0;
+}
+
+.bet-form .score-inputs {
+    margin: 1rem 0;
+}
+
+.bet-info {
+    text-align: center;
+    color: #64748b;
+    margin: 0;
+}
+
+.bet-info small {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .modal-content {
+        margin: 5% auto;
+        padding: 1.5rem;
+    }
+} 

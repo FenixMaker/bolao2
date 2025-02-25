@@ -4,133 +4,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - FLA BIBI</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/games.css">
+    <link rel="stylesheet" href="src/styles/admin.css">
+    <link rel="stylesheet" href="src/styles/modal.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="/" class="logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trophy-icon">
-                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                        <path d="M4 22h16"></path>
-                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-                    </svg>
-                    <span>FLA BIBI</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="/">Próximos Jogos</a>
-                    <a href="/historico.html">Histórico</a>
-                    <a href="/admin.html" class="active">Admin</a>
-                </div>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://logodetimes.com/times/flamengo/logo-flamengo-256.png" alt="Logo Flamengo">
+                <h1>FLA BIBI</h1>
             </div>
+            <nav class="main-nav">
+                <a href="/">Início</a>
+                <a href="/historico.html">Histórico</a>
+                <a href="/admin.html" class="active">Admin</a>
+                <div class="auth-buttons"></div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <main class="container">
-        <h1 class="page-title">Painel do Administrador</h1>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h2>Painel Administrativo</h2>
+            <nav class="admin-nav">
+                <button class="nav-button active" data-section="games">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    Jogos
+                </button>
+                <button class="nav-button" data-section="new-game">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                    Novo Jogo
+                </button>
+                <button class="nav-button" data-section="update-score">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                    Atualizar Placar
+                </button>
+                <button class="nav-button" data-section="manage-bets">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.2 7.8l-7.7 7.7-4-4-5.7 5.7"/>
+                        <path d="M15 7h6v6"/>
+                    </svg>
+                    Gerenciar Palpites
+                </button>
+                <button class="nav-button" data-section="featured-game">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    Jogo em Destaque
+                </button>
+            </nav>
+        </header>
 
-        <div class="admin-grid">
-            <div class="admin-card">
+        <main class="admin-content">
+            <!-- Lista de Jogos -->
+            <section id="games" class="admin-section active">
+                <h2>Jogos Cadastrados</h2>
+                <div class="games-filter">
+                    <select id="statusFilter">
+                        <option value="">Todos os Status</option>
+                        <option value="not_started">Não Iniciado</option>
+                        <option value="in_progress">Em Andamento</option>
+                        <option value="finished">Finalizado</option>
+                    </select>
+                    <input type="date" id="dateFilter" placeholder="Filtrar por data">
+                </div>
+                <div id="gamesList" class="games-grid"></div>
+            </section>
+
+            <!-- Formulário Novo Jogo -->
+            <section id="new-game" class="admin-section">
                 <h2>Cadastrar Novo Jogo</h2>
                 <form id="newGameForm" class="admin-form">
-                    <div class="form-group">
-                        <label for="homeTeam">Time da Casa</label>
-                        <select id="homeTeam" required>
-                            <option value="Flamengo">Flamengo</option>
-                        </select>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="homeTeam">Time da Casa</label>
+                            <input type="text" id="homeTeam" name="homeTeam" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="awayTeam">Time Visitante</label>
+                            <input type="text" id="awayTeam" name="awayTeam" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gameDate">Data do Jogo</label>
+                            <input type="datetime-local" id="gameDate" name="gameDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Local</label>
+                            <input type="text" id="location" name="location" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="awayTeam">Time Visitante</label>
-                        <select id="awayTeam" required>
-                            <option value="Fluminense">Fluminense</option>
-                            <option value="Vasco">Vasco</option>
-                            <option value="Botafogo">Botafogo</option>
-                            <option value="Palmeiras">Palmeiras</option>
-                            <option value="São Paulo">São Paulo</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="gameDate">Data do Jogo</label>
-                        <input type="datetime-local" id="gameDate" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="location">Local</label>
-                        <input type="text" id="location" required>
-                    </div>
-                    <button type="submit" class="admin-button">Cadastrar Jogo</button>
-                </form>
-            </div>
-
-            <div class="admin-card">
-                <h2>Cadastrar Palpite</h2>
-                <form id="newBetForm" class="admin-form">
-                    <div class="form-group">
-                        <label for="userName">Nome do Apostador</label>
-                        <input type="text" id="userName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="betGame">Jogo</label>
-                        <select id="betGame" required>
-                            <option value="1">Flamengo x Fluminense (17/03/2024)</option>
+                        <label for="competition">Competição</label>
+                        <select id="competition" name="competition" required>
+                            <option value="">Selecione uma competição</option>
+                            <option value="Campeonato Carioca">Campeonato Carioca</option>
+                            <option value="Amistoso">Amistoso</option>
                         </select>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="homeScore">Gols Casa</label>
-                            <input type="number" id="homeScore" min="0" required>
+                            <label for="round">Rodada/Fase</label>
+                            <input type="text" id="round" name="round" required>
                         </div>
                         <div class="form-group">
-                            <label for="awayScore">Gols Visitante</label>
-                            <input type="number" id="awayScore" min="0" required>
+                            <label for="broadcastInfo">Transmissão</label>
+                            <input type="text" id="broadcastInfo" name="broadcastInfo" required>
                         </div>
                     </div>
-                    <button type="submit" class="admin-button">Cadastrar Palpite</button>
+                    <button type="submit" class="submit-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Cadastrar Jogo
+                    </button>
                 </form>
-            </div>
+            </section>
 
-            <div class="admin-card">
+            <!-- Formulário Atualizar Placar -->
+            <section id="update-score" class="admin-section">
                 <h2>Atualizar Placar</h2>
                 <form id="updateScoreForm" class="admin-form">
                     <div class="form-group">
-                        <label for="updateGame">Jogo</label>
-                        <select id="updateGame" required>
-                            <option value="1">Flamengo x Fluminense (17/03/2024)</option>
-                        </select>
+                        <label for="updateGame">Selecionar Jogo</label>
+                        <select id="updateGame" name="updateGame" required></select>
+                    </div>
+                    <div class="form-row score-inputs">
+                        <div class="form-group">
+                            <label for="updateHomeScore">Placar Casa</label>
+                            <input type="number" id="updateHomeScore" name="updateHomeScore" min="0" required>
+                        </div>
+                        <div class="score-separator">x</div>
+                        <div class="form-group">
+                            <label for="updateAwayScore">Placar Visitante</label>
+                            <input type="number" id="updateAwayScore" name="updateAwayScore" min="0" required>
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="updateHomeScore">Gols Casa</label>
-                            <input type="number" id="updateHomeScore" min="0" required>
+                            <label for="gameStatus">Status</label>
+                            <select id="gameStatus" name="gameStatus" required>
+                                <option value="not_started">Não Iniciado</option>
+                                <option value="in_progress">Em Andamento</option>
+                                <option value="finished">Finalizado</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="updateAwayScore">Gols Visitante</label>
-                            <input type="number" id="updateAwayScore" min="0" required>
+                            <label for="gameMinute">Minuto Atual</label>
+                            <input type="number" id="gameMinute" name="gameMinute" min="0" max="90">
                         </div>
                     </div>
+                    <button type="submit" class="submit-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Atualizar Placar
+                    </button>
+                </form>
+            </section>
+
+            <!-- Seção de Gerenciamento de Palpites -->
+            <section id="manage-bets" class="admin-section">
+                <h2>Gerenciar Palpites</h2>
+                <div class="bets-filter">
+                    <select id="betGameFilter" class="filter-select">
+                        <option value="">Todos os Jogos</option>
+                    </select>
+                </div>
+                <form id="newBetForm" class="admin-form">
                     <div class="form-group">
-                        <label for="gameStatus">Status do Jogo</label>
-                        <select id="gameStatus" required>
-                            <option value="not_started">Não Iniciado</option>
-                            <option value="in_progress">Em Andamento</option>
-                            <option value="finished">Finalizado</option>
+                        <label for="betUserName">Nome do Apostador</label>
+                        <input type="text" id="betUserName" name="betUserName" required>
+                    </div>
+                    <div class="form-row score-inputs">
+                        <div class="form-group">
+                            <label for="betHomeScore">Placar Casa</label>
+                            <input type="number" id="betHomeScore" name="betHomeScore" min="0" required>
+                        </div>
+                        <div class="score-separator">x</div>
+                        <div class="form-group">
+                            <label for="betAwayScore">Placar Visitante</label>
+                            <input type="number" id="betAwayScore" name="betAwayScore" min="0" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Cadastrar Palpite
+                    </button>
+                </form>
+
+                <div id="betsList" class="bets-list">
+                    <!-- Lista de palpites será preenchida via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Featured Game Section -->
+            <div id="featured-game" class="admin-section">
+                <h2>Gerenciar Jogo em Destaque</h2>
+                <div class="admin-form">
+                    <div class="form-group">
+                        <label for="featuredGame">Selecione o Jogo em Destaque</label>
+                        <select id="featuredGame" name="featuredGame" class="filter-select">
+                            <option value="">Selecione um jogo</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="gameMinute">Minuto de Jogo</label>
-                        <input type="number" id="gameMinute" min="0" max="90">
-                    </div>
-                    <button type="submit" class="admin-button">Atualizar Placar</button>
-                </form>
+                    <button type="button" id="saveFeaturedGame" class="submit-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Salvar Jogo em Destaque
+                    </button>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
-    <script src="admin.js"></script>
+    <script type="module" src="src/admin.js"></script>
+    <script type="module" src="src/auth/authUI.js"></script>
 </body>
 </html>

@@ -4,33 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico - FLA BIBI</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/games.css">
+    <link rel="stylesheet" href="src/styles/historico.css">
+    <link rel="stylesheet" href="src/styles/modal.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="/" class="logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trophy-icon">
-                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                        <path d="M4 22h16"></path>
-                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-                    </svg>
-                    <span>FLA BIBI</span>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="/">Próximos Jogos</a>
-                    <a href="/historico.html" class="active">Histórico</a>
-                    <a href="/admin.html">Admin</a>
-                </div>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://logodetimes.com/times/flamengo/logo-flamengo-256.png" alt="Logo Flamengo">
+                <h1>FLA BIBI</h1>
             </div>
+            <nav class="main-nav">
+                <a href="/">Início</a>
+                <a href="/historico.html" class="active">Histórico</a>
+                <a href="/admin.html">Admin</a>
+                <div class="auth-buttons"></div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <main class="container">
         <h1 class="page-title">Histórico de Jogos</h1>
@@ -44,59 +38,81 @@
             </select>
             <select id="competitionFilter" class="filter-select">
                 <option value="">Todas as Competições</option>
-                <option value="carioca">Campeonato Carioca</option>
-                <option value="brasileiro">Brasileirão</option>
-                <option value="libertadores">Libertadores</option>
+                <option value="Campeonato Carioca">Campeonato Carioca</option>
+                <option value="Amistoso">Amistoso</option>
             </select>
         </div>
 
-        <div class="history-list">
-            <div class="history-item">
-                <div class="history-date">10/03/2024</div>
-                <div class="history-game">
-                    <div class="history-teams">
-                        <div class="team">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png" alt="Flamengo" class="team-logo-small">
-                            <span>Flamengo</span>
-                        </div>
-                        <div class="history-score">3 x 0</div>
-                        <div class="team">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Vasco_da_Gama_logo.svg" alt="Vasco" class="team-logo-small">
-                            <span>Vasco</span>
-                        </div>
+        <div id="gamesHistory" class="history-list">
+            <!-- Exemplo de item do histórico -->
+            <div class="game-history-item">
+                <div class="game-info-container">
+                    <div class="game-header">
+                        <span class="competition-badge carioca">Campeonato Carioca</span>
+                        <span class="game-score">0 × 0</span>
                     </div>
-                    <div class="history-details">
-                        <span class="competition">Campeonato Carioca</span>
-                        <span class="winner">Vencedor: Maria (3x0)</span>
-                        <span class="prize">Prêmio: R$ 45,00</span>
+                    <h3 class="game-title">Vasco da Gama vs Flamengo</h3>
+                    <div class="game-details">
+                        <div class="game-detail-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            01/03/2024 - 17:00
+                        </div>
+                        <div class="game-detail-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Maracanã
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="history-item">
-                <div class="history-date">03/03/2024</div>
-                <div class="history-game">
-                    <div class="history-teams">
-                        <div class="team">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png" alt="Flamengo" class="team-logo-small">
-                            <span>Flamengo</span>
-                        </div>
-                        <div class="history-score">2 x 1</div>
-                        <div class="team">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Botafogo_de_Futebol_e_Regatas_logo.svg" alt="Botafogo" class="team-logo-small">
-                            <span>Botafogo</span>
-                        </div>
+                <div class="bets-info">
+                    <div class="bets-info-item">
+                        <span class="bets-info-label">Total de Apostas</span>
+                        <span class="bets-info-value">0</span>
                     </div>
-                    <div class="history-details">
-                        <span class="competition">Campeonato Carioca</span>
-                        <span class="winner">Vencedor: João (2x1)</span>
-                        <span class="prize">Prêmio: R$ 36,00</span>
+                    <div class="bets-info-item">
+                        <span class="bets-info-label">Prêmio Total</span>
+                        <span class="bets-info-value">R$ 0,00</span>
                     </div>
+                    <button class="details-button">
+                        Ver Detalhes
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
+
+        <div id="pagination" class="pagination">
+            <button disabled>Anterior</button>
+            <span>Página 1 de 1</span>
+            <button disabled>Próxima</button>
+        </div>
     </main>
 
-    <script src="historico.js"></script>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
+
+    <script type="module" src="src/historico.js"></script>
+    <script type="module" src="src/auth/authUI.js"></script>
 </body>
 </html>
